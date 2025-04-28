@@ -69,8 +69,8 @@ Developed by: Register Number*/
 	source /cadence/install/cshrc (mention the path of the tools) 
 
       (The path of cshrc could vary depending on the installation destination)
-![image](https://github.com/user-attachments/assets/b1f93eb9-fab2-4456-95fa-2eda4cde5320)
-         
+![Screenshot 2025-04-28 212829](https://github.com/user-attachments/assets/e025bf36-cb08-464e-8172-6a19d62247fc)
+        
 	After this you can see the window like below 
 
 ### Fig 3:Invoke the Cadence Environment
@@ -84,14 +84,14 @@ or
 •	linux:/> nclaunch& // On subsequent calls to NCVERILOG 
 
 	It will invoke the nclaunch window for functional simulation we can compile,elaborate and simulate it using Multiple Step .
-![image](https://github.com/user-attachments/assets/fc80d135-022e-4cd4-a344-bfef6685b285)
+![Screenshot 2025-04-28 212909](https://github.com/user-attachments/assets/a52ec305-5e90-4b46-8690-f80067e55e0d)
 
 ### Fig 4:Setting Multi-step simulation
 
 	Select Multiple Step and then select “Create cds.lib File” .
 
 	Click the cds.lib file and save the file by clicking on Save option 
-![image](https://github.com/user-attachments/assets/e4a41ce1-2426-4da3-9b7e-fd2dc255ec57)
+![Screenshot 2025-04-28 213206](https://github.com/user-attachments/assets/39eb4060-3ee6-4468-9f69-4db125967ca9)
 
 
 ### Fig 5:cds.lib file Creation
@@ -104,7 +104,8 @@ or
 
 •	A Click “OK” in the “nclaunch: Open Design Directory” window as shown in below figure 
 
-![image](https://github.com/user-attachments/assets/781b297a-11e9-4140-89c5-ee3b0d15bbd4)
+![Screenshot 2025-04-28 221452](https://github.com/user-attachments/assets/fbb87628-c57b-4121-84c1-b48e911b0c2e)
+
 
 ### Fig 6: Selection of Don’t include any libraries
 
@@ -117,7 +118,7 @@ or
 	To perform the function simulation, the following three steps are involved Compilation, Elaboration and Simulation. 
 
 ### Fig 7: Nclaunch Window
-![image](https://github.com/user-attachments/assets/74f3ae54-3196-4123-a2c2-9b40a8f852ec)
+![Screenshot 2025-04-28 221657](https://github.com/user-attachments/assets/bb079b1f-38f4-45ff-ba9e-07eb580ece84)
 
 ## Step 1: Compilation:– Process to check the correct Verilog language syntax and usage 
 
@@ -143,7 +144,8 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 	Select the test bench and compile it. It will come under worklib. Under Worklib you can see the module and test-bench. 
 
 	The cds.lib file is an ASCII text file. It defines which libraries are accessible and where they are located. It contains statements that map logical library names to their physical directory paths. For this Design, you will define a library called “worklib”
-![image](https://github.com/user-attachments/assets/0846ba18-11b6-4ca7-8fb3-5858dd75276c)
+
+![Screenshot 2025-04-28 213226](https://github.com/user-attachments/assets/b0df0683-d658-4bd4-b2e4-c7bdbe9e1111)
 
 ## Step 2: Elaboration:– To check the port connections in hierarchical design 
 	Inputs: Top level design / test bench Verilog codes 
@@ -161,7 +163,7 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 	After elaboration the file will come under snapshot. Select the test bench and elaborate it.
 
 ### Fig 9: Elaboration Launch Option
-![image](https://github.com/user-attachments/assets/06e2cff8-ff81-4d5d-85a0-acd589590428)
+![Screenshot 2025-04-28 213235](https://github.com/user-attachments/assets/ae83226a-adde-430a-87cc-3ba717e5c93d)
 
 ## Step 3: Simulation: – Simulate with the given test vectors over a period of time to observe the output behaviour. 
 
@@ -177,10 +179,10 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 ![image](https://github.com/user-attachments/assets/966c0874-b68a-49f3-8052-73f331284364)
 
 ### Fig 11: Launching Simulation Waveform WindowSimulation Waveform Window
-![image](https://github.com/user-attachments/assets/b170f93d-c54f-4790-b684-283f27aab799)
+![Screenshot 2025-04-28 213247](https://github.com/user-attachments/assets/a8c60f52-1aa6-4511-903f-08d18d2c2f37)
 
 ### Fig 12: Simulation Waveform Window
-![image](https://github.com/user-attachments/assets/3948401a-6e4c-4470-8814-5ce602544ffd)
+![Screenshot 2025-04-28 213254](https://github.com/user-attachments/assets/1781af7f-3922-437c-b53c-788f130c52e0)
 
 ### Result:
 

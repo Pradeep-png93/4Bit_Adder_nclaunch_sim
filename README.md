@@ -56,9 +56,38 @@ Note : File name should be with HDL Extension
 •	fa_4bit.v → Top Module for Adding 4-bit Inputs. 
 
 •	fa_4bit_test.v → Test bench 
+# verilog code
+```
+module full_adder(A,B,CIN,S,COUT);
+input A,B,CIN;
+output S,COUT;
+assign S=A^B^CIN;
+assign COUT=(A&B) | (CIN&(A^B));
+ endmodule
 
-*/Program to design 4 bit adder by instantiating 1 bit Full adder.also add test bench program */
-Developed by: Register Number*/
+module fulladd_4bit(A,B,C0,S,C4); input [3:0] A,B;
+input C0; output [3:0] S; output C4;
+wire C1,C2,C3;
+full_adder fa0 (A[0],B[0],C0,S[0],C1);
+full_adder fa1 (A[1],B[1],C1,S[1],C2);
+full_adder fa2 (A[2],B[2],C2,S[2],C3);
+full_adder fa3 (A[3],B[3],C3,S[3],C4);
+endmodule
+```
+# TestBench
+```
+module test_4bit;
+reg [3:0] A;
+reg [3:0] B; reg C0; wire [3:0] S; wire C4;
+fulladd_4bit dut (A,B,C0,S,C4);
+initial
+begin A=4'b0011;B=4'b0011;C0=1'b0;
+#10; A=4'b1011;B=4'b0111;C0=1'b1;
+#10; A=4'b1111;B=4'b1111;C0=1'b1;
+#10;
+end initial #50 $finish;
+endmodule
+```
 
 ## Functional Simulation: 
 
@@ -94,7 +123,7 @@ or
 ![Screenshot 2025-04-28 213206](https://github.com/user-attachments/assets/39eb4060-3ee6-4468-9f69-4db125967ca9)
 
 
-### Fig 5:cds.lib file Creation
+### Fig 5:Nclaunch Window
 
 	Save cds.lib file and select the correct option for cds.lib file format based on the HDL Language and Libraries used. 
 
@@ -104,8 +133,7 @@ or
 
 •	A Click “OK” in the “nclaunch: Open Design Directory” window as shown in below figure 
 
-![Screenshot 2025-04-28 221452](https://github.com/user-attachments/assets/fbb87628-c57b-4121-84c1-b48e911b0c2e)
-
+![Screenshot 2025-04-28 212939](https://github.com/user-attachments/assets/f38bd73e-2fef-401c-b663-db097ec0b69f)
 
 ### Fig 6: Selection of Don’t include any libraries
 
@@ -116,9 +144,6 @@ or
 	Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation .
 
 	To perform the function simulation, the following three steps are involved Compilation, Elaboration and Simulation. 
-
-### Fig 7: Nclaunch Window
-![Screenshot 2025-04-28 221657](https://github.com/user-attachments/assets/bb079b1f-38f4-45ff-ba9e-07eb580ece84)
 
 ## Step 1: Compilation:– Process to check the correct Verilog language syntax and usage 
 
@@ -137,15 +162,13 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
 Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation
 
-### Fig 8: Compiled database in worklib
+
 
 	After compilation it will come under worklib you can see in right side window
 
 	Select the test bench and compile it. It will come under worklib. Under Worklib you can see the module and test-bench. 
 
 	The cds.lib file is an ASCII text file. It defines which libraries are accessible and where they are located. It contains statements that map logical library names to their physical directory paths. For this Design, you will define a library called “worklib”
-
-![Screenshot 2025-04-28 213226](https://github.com/user-attachments/assets/b0df0683-d658-4bd4-b2e4-c7bdbe9e1111)
 
 ## Step 2: Elaboration:– To check the port connections in hierarchical design 
 	Inputs: Top level design / test bench Verilog codes 
@@ -162,7 +185,7 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
    
 	After elaboration the file will come under snapshot. Select the test bench and elaborate it.
 
-### Fig 9: Elaboration Launch Option
+### Fig 7: Elaboration Launch Option
 ![Screenshot 2025-04-28 213235](https://github.com/user-attachments/assets/ae83226a-adde-430a-87cc-3ba717e5c93d)
 
 ## Step 3: Simulation: – Simulate with the given test vectors over a period of time to observe the output behaviour. 
@@ -175,13 +198,10 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
 	Steps for simulation – Run the simulation command with simulator options
 
-### Fig 10: Design Browser window for simulation
-![image](https://github.com/user-attachments/assets/966c0874-b68a-49f3-8052-73f331284364)
-
-### Fig 11: Launching Simulation Waveform WindowSimulation Waveform Window
+### Fig 8: Launching Simulation Waveform WindowSimulation Waveform Window
 ![Screenshot 2025-04-28 213247](https://github.com/user-attachments/assets/a8c60f52-1aa6-4511-903f-08d18d2c2f37)
 
-### Fig 12: Simulation Waveform Window
+### Fig 9: Simulation Waveform Window
 ![Screenshot 2025-04-28 213254](https://github.com/user-attachments/assets/1781af7f-3922-437c-b53c-788f130c52e0)
 
 ### Result:

@@ -97,10 +97,11 @@ endmodule
 
 	source /cadence/install/cshrc (mention the path of the tools) 
 
-      (The path of cshrc could vary depending on the installation destination)
-![Screenshot 2025-04-28 212829](https://github.com/user-attachments/assets/e025bf36-cb08-464e-8172-6a19d62247fc)
-        
-	After this you can see the window like below 
+	After this you can see the window like below
+
+      
+![Screenshot 2025-04-28 212851](https://github.com/user-attachments/assets/e4fc9768-ea99-4f7d-a106-432a7d8dc117)
+
 
 ### Fig 3:Invoke the Cadence Environment
 
@@ -120,10 +121,6 @@ or
 	Select Multiple Step and then select “Create cds.lib File” .
 
 	Click the cds.lib file and save the file by clicking on Save option 
-![Screenshot 2025-04-28 213206](https://github.com/user-attachments/assets/39eb4060-3ee6-4468-9f69-4db125967ca9)
-
-
-### Fig 5:Nclaunch Window
 
 	Save cds.lib file and select the correct option for cds.lib file format based on the HDL Language and Libraries used. 
 
@@ -135,7 +132,7 @@ or
 
 ![Screenshot 2025-04-28 212939](https://github.com/user-attachments/assets/f38bd73e-2fef-401c-b663-db097ec0b69f)
 
-### Fig 6: Selection of Don’t include any libraries
+### Fig 5: Selection of Don’t include any libraries
 
 	A ‘NCLaunch window’ appears as shown in figure below 
 
@@ -144,7 +141,7 @@ or
 	Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation .
 
 	To perform the function simulation, the following three steps are involved Compilation, Elaboration and Simulation. 
-
+### Fig 6:Nclaunch Window
 ## Step 1: Compilation:– Process to check the correct Verilog language syntax and usage 
 
 	Inputs: Supplied are Verilog design and test bench codes 
@@ -158,11 +155,10 @@ or
 3. Run the compile command with compile options 
 i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
-Left side select the file and in Tools : launch verilog compiler with current selection will get enable. Click it to compile the code 
-
 Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation
 
-
+### Fig 7:Compiled database in worklib
+![Screenshot 2025-04-28 213206](https://github.com/user-attachments/assets/1deba10e-83b2-4577-a161-ea29eee7a41e)
 
 	After compilation it will come under worklib you can see in right side window
 
@@ -185,9 +181,6 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
    
 	After elaboration the file will come under snapshot. Select the test bench and elaborate it.
 
-### Fig 7: Elaboration Launch Option
-![Screenshot 2025-04-28 213235](https://github.com/user-attachments/assets/ae83226a-adde-430a-87cc-3ba717e5c93d)
-
 ## Step 3: Simulation: – Simulate with the given test vectors over a period of time to observe the output behaviour. 
 
 	Inputs: Compiled and Elaborated top level module name 
@@ -198,10 +191,16 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
 	Steps for simulation – Run the simulation command with simulator options
 
-### Fig 8: Launching Simulation Waveform WindowSimulation Waveform Window
+![Screenshot 2025-04-28 213226](https://github.com/user-attachments/assets/213c7e06-410b-4809-819a-cbfb4dd1d4a1)
+
+### Fig 8: Design Browser window for simulation
+
+ ![Screenshot 2025-04-28 213235](https://github.com/user-attachments/assets/42d4530d-eb3e-4cca-b975-0e6c20090996)
+
+### Fig 9: Launching Simulation Waveform WindowSimulation Waveform Window
 ![Screenshot 2025-04-28 213247](https://github.com/user-attachments/assets/a8c60f52-1aa6-4511-903f-08d18d2c2f37)
 
-### Fig 9: Simulation Waveform Window
+### Fig 10: Simulation Waveform Window
 ![Screenshot 2025-04-28 213254](https://github.com/user-attachments/assets/1781af7f-3922-437c-b53c-788f130c52e0)
 
 ### Result:
